@@ -2,41 +2,56 @@
 <script >
   
   export default {
-  
-
     data(){
-        return{     
-            obs:1,
+    return{
+        obs:1,
             carouselMain:[
                 {
-                    img : "",
-                    paragrafo : "",
-                    link : "",
-                    titolo : "",
+                    
                 },
                 {
                     img : "",
-                    paragrafo : "",
-                    link : "",
-                    titolo : "",
+                    paragrafo : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error alias, molestiae iusto at magnam cumque exercitationem est culpa quae tempore maxime sed accusantium officia minima consectetur. Distinctio quaerat dolorem soluta!",
+                    link : "PRENOTA",
+                    titolo : "Titolo paragrafo1",
                 },
                 {
                     img : "",
-                    paragrafo : "",
-                    link : "",
-                    titolo : "",
+                    paragrafo : "ipsum dolor sit amet consectetur adipisicing elit. Error alias, molestiae iusto at magnam cumque exercitationem est culpa quae tempore maxime sed accusantium officia minima consectetur. Distinctio quaerat dolorem soluta!",
+                    link : "MENU",
+                    titolo : "Titolo paragrafo2",
+                },
+                {
+                    img : "",
+                    paragrafo : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error alias, molestiae iusto at magnam cumque exercitationem est culpa quae tempore maxime sed accusantium officia minima consectetur. Distinctio quaerat dolorem soluta!",
+                    link : "ooooooo",
+                    titolo : "Titolo paragrafo3",
                 }
             ]
-           
-        },
-        
-    },
-    methods: {
-        rightImage{
-            this.obs++
-        }
     }
-    
+  },
+  methods: {
+    imgright(){
+        if(this.obs == 3){
+            this.obs = 1
+        }else{
+            this.obs ++
+        } 
+       
+    },
+    imgleft(){
+        if(this.obs == 1){
+            this.obs = 3
+            
+        }else{
+            this.obs --
+            
+        }
+            
+     }
+    },
+
+  
   }
 </script>
 
@@ -44,11 +59,11 @@
 <template>
 
 <main>
-    <div class="left-main">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error alias, molestiae iusto at magnam cumque exercitationem est culpa quae tempore maxime sed accusantium officia minima consectetur. Distinctio quaerat dolorem soluta!</p>
+    <div class="left-main" :class="this.obs == 1 ? 'img1': ''">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat nobis rerum autem eligendi facilis officiis mollitia fugit, voluptates numquam iusto. Sint maxime natus voluptatibus, quisquam ipsum corporis? Aliquam, ea nisi.</p>
         <div class="button-carousel">
             <div class="left-arrow">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16" @click="imgleft">
                     <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
                 </svg>
             </div>
@@ -58,7 +73,7 @@
 
             </div>
             <div class="right-arrow">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16" @click="imgright">
                     <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
                 </svg>
             </div>
@@ -66,8 +81,9 @@
     </div>
     <div class="right-main">
         <div class="top-right">
-            <h2>titolo paragrafo</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat nobis rerum autem eligendi facilis officiis mollitia fugit, voluptates numquam iusto. Sint maxime natus voluptatibus, quisquam ipsum corporis? Aliquam, ea nisi.</p>
+            <h2>{{ this.carouselMain[obs].titolo }}</h2>
+            <p>{{ this.carouselMain[obs].paragrafo }}</p>
+            <span class="button">{{ this.carouselMain[obs].link }}</span>
         </div>
         <div class="bottom-right">
             <div class="left-bottom">
@@ -107,13 +123,22 @@
 <style lang="scss" scoped>
 @use '../assets/styles/general.scss' as *;
 
+.img1{
+    background: url(../assets/img/bigimage.png);
+}
+.img2{
+    background: url(../assets/img/bigimage.png);
+}
+.img3{
+    background: url(../assets/img/bigimage.png);
+}
 main{
     display: flex;
     
     .left-main{
     background-color: red;
     width: 75%;
-    background: url(../assets/img/bigimage.png);
+    background: url();
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -153,9 +178,12 @@ main{
         background-color: #EBD59B;
         height: 50%;
         width: 25%;
-
+        
         .top-right{
             padding: 5rem 3rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             h2{
                 color: black;
                 font-size: 27px;
@@ -165,6 +193,11 @@ main{
                 color: black;
                 font-size: 25px;
                 padding-top: 2rem;
+            }
+            .button{
+                background-color: #4D0404;
+                padding: 1rem 2rem;
+                margin-top: 2rem;
             }
         }
         .bottom-right{
