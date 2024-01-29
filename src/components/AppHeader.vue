@@ -15,12 +15,12 @@
     </div>
     <div class="right-header">
       <div class="nav">
-         <span>home</span>
-         <span>prenota tavolo</span>
-         <span>prenota asporto</span>
-         <span>chi siamo?</span>
-         <span>contatti</span>
-         <span>menu</span>
+         <router-link :to="{ name: 'home' }" >home</router-link>
+         <router-link :to="{ name: 'prenotaServizio' }"  >prenota tavolo</router-link>
+         <router-link :to="{ name: 'prenota' }"  >prenota asporto</router-link>
+         <router-link :to="{ name: 'chi-siamo' }"  >chi siamo</router-link>
+         <router-link :to="{ name: 'Contatti' }"  >contatti</router-link>
+         <router-link :to="{ name: 'menu' }"  >menu</router-link>
       </div>
     </div>
   </header>
@@ -39,7 +39,7 @@ header{
   .left-header{
     display: flex;
     align-items: center;
-    gap: 10rem;
+    gap: 20%;
     .logo{
       width: 100px;
       height: 100px;
@@ -53,9 +53,9 @@ header{
   .right-header{
     display: flex;
     align-items: center;
-    
     .nav{
       display: flex;
+      flex-wrap: wrap;
       gap: 5rem;
       background-color: #A6252D;
       padding: 2rem;
