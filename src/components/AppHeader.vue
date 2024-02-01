@@ -1,5 +1,37 @@
 
 <script >
+
+export default {
+    data(){
+    return{
+      sideMenuValue: 0,
+      infomenu: 0,
+        
+    }
+  },
+  methods: {
+    openside() {
+            if (this.sideMenuValue) {
+                this.sideMenuValue = 0
+            } else {
+                this.sideMenuValue = 1
+
+            }
+            console.log(this.sideMenuValue)
+        
+        },
+        infoside() {
+            if (this.infomenu) {
+                this.infomenu = 0
+            } else {
+                this.infomenu = 1
+            }
+        },
+    
+    },
+
+  
+  }
   
 </script>
 
@@ -22,6 +54,25 @@
          <router-link :to="{ name: 'Contatti' }"  >contatti</router-link>
          <router-link :to="{ name: 'menu' }"  >menu</router-link>
       </div>
+    </div>
+    <div class="nav-mb">
+      
+      <div class="btn-menu" @click="openside" >
+        <div class="l2" :class="sideMenuValue? 'l1-on':''"></div>
+        <div class="l2" :class="sideMenuValue? 'l2-on':''"></div>
+        <div class="l2" :class="sideMenuValue? 'l3-on':''"></div>
+      </div>
+    </div>
+
+    <div  :class="this.sideMenuValue? 'nav-mb-on': 'nav-mb-off'">
+        <div :class="this.sideMenuValue? 'top-on': 'top-off'">
+         <router-link :to="{ name: 'home' }" class="link" @click="openside">home</router-link>
+         <router-link :to="{ name: 'prenotaServizio' }" class="link" @click="openside" >prenota tavolo</router-link>
+         <router-link :to="{ name: 'prenota' }" class="link" @click="openside" >prenota asporto</router-link>
+         <router-link :to="{ name: 'chi-siamo' }" class="link" @click="openside" >chi siamo</router-link>
+         <router-link :to="{ name: 'Contatti' }" class="link" @click="openside" >contatti</router-link>
+         <router-link :to="{ name: 'menu' }" class="link" @click="openside" >menu</router-link>
+        </div>
     </div>
   </header>
 </template>
@@ -65,4 +116,99 @@ header{
 }
 
 
+.nav-mb{
+    display: none;
+    position: relative;
+    z-index: 5315;
+    width: 100%;
+
+    
+  .btn-menu{
+    position: fixed;
+    right: 50px;
+    top: 110px;
+    z-index: 20;
+    flex-direction: column;
+    gap: .7rem;
+    align-items: flex-end;
+    display: flex;
+    
+    .l2{
+      width: 50px;
+      height: 5px;
+      border-radius: 20px;
+      background-color: white;
+     
+    }
+    
+    
+    }
+    
+    
+  }
+
+  .nav-mb-on{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: #270000;
+    width: 100%;
+    height: 100%;
+    transition: all .3s linear;
+    }
+
+    .nav-mb-off{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: #270000;
+    width: 100%;
+    height: 0;
+    transition: all .2s linear;
+
+
+  }
+
+  .l1-on{
+    transform: rotateZ(-45deg);
+  }
+  .l2-on{
+    position: fixed;
+    transform: rotateZ(45deg);
+  }
+  .l3-on{
+    display: none;
+  }
+  
+  .top-off{
+    display: none;
+    
+    
+  }
+  .top-on{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10%;
+    height: 100%;
+   
+    
+    .link{
+      color: white;
+      font-size: 23px;
+    }
+  }
+
+@media (max-width: 900px) {
+  
+  .right-header{
+    display: none!important;
+  }
+  .nav-mb{
+    display: block!important;
+  }
+}
 </style>

@@ -3,15 +3,17 @@
   import AppHeader from './components/AppHeader.vue'
   
   
+  
 
   export default {
-  components:{  AppHeader }
+  components:{  AppHeader,  }
   }
 </script>
 
 <template>
 
   <div class="container">
+    
     <AppHeader class="header"/>
     <router-view class="page"></router-view>
   </div>
@@ -31,6 +33,10 @@
   overflow: hidden;
 
 
+  .sheader{
+    display: none;
+  }
+
   
   .page{
     //overflow: auto;
@@ -41,8 +47,10 @@
 @media (max-width : 900px) {
 
   .header{
-   display: none !important;;
+   
   }
+
+  
   
 }
 
