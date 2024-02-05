@@ -276,12 +276,22 @@ main{
 
     .right-main{
         display: none!important;
+        
     }
     .left-main{
         width: 100%!important;
     }
     .right-main-mb{
-    display: block!important;
+    display: flex!important;
+    flex-direction: column;
+    align-items: center!important;
+
+    span{
+        background-color: #4D0404;
+        padding: 1rem;
+        color: white;
+        border-radius: 20px;
+    }
 }
 
     

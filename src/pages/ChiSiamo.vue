@@ -124,6 +124,7 @@
 
         .text{
             text-align: right;
+            padding: 2rem;
         }
       }
       
@@ -147,7 +148,7 @@
           object-fit: cover;
         }
         .text{
-          
+          padding: 2rem;
           position: relative;
           z-index: 3;
           display: flex;

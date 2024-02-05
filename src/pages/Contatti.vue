@@ -178,6 +178,7 @@ main{
             width: 90%;
             text-align: center;
             padding: .5rem 2rem;
+            
             h3{
                 text-transform: uppercase;
                 padding-top: .5rem;
@@ -206,6 +207,7 @@ main{
     main{
         flex-direction: column;
         gap: 2rem;
+        padding-bottom: 2rem;
 
         .left-main,.center-main,.right-main{
             width: 90%;
@@ -223,6 +225,9 @@ main{
                 p{
                     text-align: center;
                 }
+            }
+            .container-og{
+                margin-bottom: 2rem;
             }
         }
     }
