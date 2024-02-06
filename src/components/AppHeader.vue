@@ -209,6 +209,7 @@ header{
   }
   .nav-mb{
     display: block!important;
+    z-index: 2!important;
   }
 }
 </style>

@@ -12,7 +12,7 @@
                 {
                     img : "../assets/img/bigimage.png",
                     paragrafo : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error alias, molestiae iusto at magnam cumque exercitationem est culpa quae tempore maxime sed accusantium officia minima consectetur. Distinctio quaerat dolorem soluta!",
-                    link : "PRENOTA",
+                    link : "PRENOTA TAVOLO",
                     titolo : "Titolo paragrafo1",
                 },
                 {
@@ -24,7 +24,7 @@
                 {
                     img : "",
                     paragrafo : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error alias, molestiae iusto at magnam cumque exercitationem est culpa quae tempore maxime sed accusantium officia minima consectetur. Distinctio quaerat dolorem soluta!",
-                    link : "ooooooo",
+                    link : "PRENOTA D'ASPORTO",
                     titolo : "Titolo paragrafo3",
                 }
             ]
@@ -64,7 +64,9 @@
         <div class="right-main-mb">
             <h2>{{ this.carouselMain[obs].titolo }}</h2>
             <p>{{ this.carouselMain[obs].paragrafo }}</p>
-            <span class="button">{{ this.carouselMain[obs].link }}</span>
+            <router-link :to="{ name: 'home' }" class="button" v-if="obs == 1">{{ this.carouselMain[obs].link }}</router-link>
+            <router-link :to="{ name: 'menu' }" class="button" v-if="obs == 2">{{ this.carouselMain[obs].link }}</router-link>
+            <router-link :to="{ name: 'home' }" class="button" v-if="obs == 3">{{ this.carouselMain[obs].link }}</router-link>
         </div>
         <div class="button-carousel">
             <div class="left-arrow">
@@ -147,7 +149,6 @@ main{
     align-items: stretch;
     overflow: hidden;
     .left-main{
-        background-color: red;
         background-repeat: no-repeat;
         background-size: cover;
         display: flex;
@@ -286,12 +287,16 @@ main{
     flex-direction: column;
     align-items: center!important;
 
-    span{
-        background-color: #4D0404;
-        padding: 1rem;
-        color: white;
-        border-radius: 20px;
-    }
+        .button{
+            background-color: #4D0404;
+            padding: 1rem;
+            color: white;
+            border-radius: 20px;
+        }
+        p{
+            background-color: rgba(0, 0, 0, 0.719)!important;
+            
+        }
 }
 
     
