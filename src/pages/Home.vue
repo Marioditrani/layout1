@@ -59,6 +59,7 @@
 <template>
 
 <main>
+    
     <div class="left-main" :class="this.obs == 1 ? 'img1': '',this.obs == 2 ? 'img2' : '',this.obs == 3 ? 'img3' : ''">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat nobis rerum autem eligendi facilis officiis mollitia fugit, voluptates numquam iusto. Sint maxime natus voluptatibus, quisquam ipsum corporis? Aliquam, ea nisi.</p>
         <div class="right-main-mb">
@@ -83,7 +84,7 @@
                 </svg>
             </div>
         </div>
-        
+       
     </div>
     <div class="right-main">
         <div class="top-right">
@@ -135,12 +136,15 @@
 
 .img1{
     background: url('../assets/img/bigimage.png');
+    transition: all .5s linear;
 }
 .img2{
     background: url('https://ilfattoalimentare.it/wp-content/uploads/2022/12/Depositphotos_505971914_L-1.jpg');
+    transition: all .5s linear;
 }
 .img3{
     background: url(../assets/img/bigimage.png);
+    transition: all 1s linear;
 }
 main{
     display: flex;
@@ -154,15 +158,28 @@ main{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        flex-grow: 2;
-        flex-shrink: 1;
+        width: 70%;
         height: 100%;
+        
+        
+            img{
+                height: 100%;
+                //flex-basis: auto;
+                //width: 70%;
+                //object-fit: cover;
+                position: absolute; 
+                left: 0;
+                bottom: 0;
+                z-index: 1;
+            }
 
             p{
                 background-color: #4D0404;
                 padding: 1rem;
                 margin: 3rem 5rem;
                 border-radius: 20px;
+                position: relative;
+                z-index: 5;
             }
 
             .button-carousel{
@@ -174,7 +191,9 @@ main{
                 background-color: rgba(0, 0, 0, 0.719);
                 margin-bottom: 4rem;
                 padding: 1rem;
-
+                color: white;
+                position: relative;
+                z-index: 5;
                 svg{
                     display: flex;
                     justify-content: center;
@@ -197,6 +216,8 @@ main{
         flex-grow: 1;
         flex-shrink: 2;
         overflow: auto;
+        transition: all 1s linear;
+        width: 30%;
         .top-right{
             padding: 5rem 3rem;
             display: flex;
@@ -270,6 +291,7 @@ main{
 .right-main-mb{
     display: none!important;
 }
+
 
 
 

@@ -56,7 +56,6 @@ export default {
       </div>
     </div>
     <div class="nav-mb">
-      
       <div class="btn-menu" @click="openside" >
         <div class="l2" :class="sideMenuValue? 'l1-on':''"></div>
         <div class="l2" :class="sideMenuValue? 'l2-on':''"></div>
@@ -119,7 +118,7 @@ header{
 .nav-mb{
     display: none;
     position: relative;
-    z-index: 5315;
+    
     width: 100%;
 
     
@@ -127,13 +126,13 @@ header{
     position: fixed;
     right: 50px;
     top: 110px;
-    z-index: 20;
     flex-direction: column;
     gap: .7rem;
     align-items: flex-end;
     display: flex;
     
     .l2{
+      z-index: 10;
       width: 50px;
       height: 5px;
       border-radius: 20px;
@@ -151,7 +150,6 @@ header{
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1000;
     background-color: #270000;
     width: 100%;
     height: 100%;
@@ -162,7 +160,6 @@ header{
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 10;
     background-color: #270000;
     width: 100%;
     height: 0;
@@ -194,11 +191,13 @@ header{
     justify-content: space-around;
     padding: 10%;
     height: 100%;
-   
+    margin-top: 4rem;
     
     .link{
       color: white;
       font-size: 23px;
+      z-index: 10!important;
+      position: relative!important;
     }
   }
 
@@ -211,5 +210,7 @@ header{
     display: block!important;
     z-index: 2!important;
   }
+  
+ 
 }
 </style>
