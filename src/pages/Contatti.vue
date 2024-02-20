@@ -177,7 +177,7 @@ main{
             flex-direction: column;
             width: 90%;
             text-align: center;
-            padding: .5rem 2rem;
+            padding: .5rem 2rem 1rem;
             
             h3{
                 text-transform: uppercase;
@@ -202,7 +202,7 @@ main{
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1300px) {
 
     main{
         flex-direction: column;
@@ -215,6 +215,7 @@ main{
         }
 
         .left-main{
+
             .top, .bottom{
                 align-items: center!important;
             }
