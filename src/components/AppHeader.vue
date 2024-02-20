@@ -118,10 +118,7 @@ header{
 .nav-mb{
     display: none;
     position: relative;
-    
-    width: 100%;
-
-    
+    width: 100%;   
   .btn-menu{
     position: fixed;
     right: 50px;
@@ -130,7 +127,7 @@ header{
     gap: .7rem;
     align-items: flex-end;
     display: flex;
-    
+    z-index: 100!important;
     .l2{
       z-index: 10;
       width: 50px;
@@ -154,6 +151,8 @@ header{
     width: 100%;
     height: 100%;
     transition: all .3s linear;
+    z-index: 6;
+  
     }
 
     .nav-mb-off{
@@ -165,6 +164,7 @@ header{
     height: 0;
     transition: all .2s linear;
 
+    
 
   }
 
