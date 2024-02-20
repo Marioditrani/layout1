@@ -119,7 +119,10 @@ main{
         width: 33%;
         display: flex;
         flex-direction: column;
-        padding: 5rem;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding-top: 1rem;
         .top{
             display: flex;
             flex-direction: column;
@@ -132,7 +135,7 @@ main{
             .social{
                 display: flex;
                 justify-content: space-between;
-                width: 50%;
+                width: 100%;
             }
         }
     }
@@ -156,6 +159,8 @@ main{
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
+        padding: 1rem;
         .top{
             display: flex;
             flex-direction: column;
