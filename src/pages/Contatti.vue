@@ -234,5 +234,35 @@ main{
     }
 
 }
+@media (max-width: 700px) {
+
+    main{
+        .left-main{
+
+            .top{
+                padding: 0;
+            }
+            .social{
+                gap: 2rem;
+            }
+
+            
+        }
+
+        .right-main{
+            .top{
+                p{
+                    text-align: center;
+                }
+            }
+            .container-og{
+                margin-bottom: 2rem;
+            }
+        }
+    }
+
+}
+
+
 
 </style>

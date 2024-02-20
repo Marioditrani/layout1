@@ -79,6 +79,8 @@ export default {
 <style lang="scss" scoped>
 @use '../assets/styles/general.scss' as *;
 
+
+
 header{
   background-color: #781C1C;
   width: 100%;
@@ -86,13 +88,14 @@ header{
   justify-content: space-between;
   padding: 5rem;
   text-transform: uppercase;
+  z-index: 5!important;
   .left-header{
     display: flex;
     align-items: center;
     gap: 20%;
     .logo{
-      width: 100px;
-      height: 100px;
+      width: 200px;
+      aspect-ratio: 1;
       background-color: red;
     }
     .title{
@@ -127,7 +130,7 @@ header{
     gap: .7rem;
     align-items: flex-end;
     display: flex;
-    z-index: 100!important;
+    z-index: 5!important;
     .l2{
       z-index: 10;
       width: 50px;
@@ -151,7 +154,7 @@ header{
     width: 100%;
     height: 100%;
     transition: all .3s linear;
-    z-index: 6;
+   
   
     }
 
@@ -201,6 +204,8 @@ header{
     }
   }
 
+  
+
 @media (max-width: 1700px) {
   
   .right-header{
@@ -212,5 +217,26 @@ header{
   }
   
  
+}
+@media (max-width: 700px) {
+  
+  header{
+    padding: 5rem 2rem!important;
+  }
+
+}
+@media (max-width: 600px) {
+  
+  header{
+    .left-header{
+      .logo{
+        width: 150px;
+      }
+      .title{
+        display: none;
+      }
+    }
+  }
+
 }
 </style>
