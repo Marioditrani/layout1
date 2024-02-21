@@ -179,7 +179,7 @@ main{
                 margin: 3rem 5rem;
                 border-radius: 20px;
                 position: relative;
-                z-index: -1;
+                z-index: 1;
             }
 
             .button-carousel{
@@ -193,7 +193,7 @@ main{
                 padding: 1rem;
                 color: white;
                 position: relative;
-                z-index: -1;
+                z-index: 1;
                 svg{
                     display: flex;
                     justify-content: center;
