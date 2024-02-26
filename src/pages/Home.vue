@@ -303,6 +303,7 @@ main{
     }
     .left-main{
         width: 100%!important;
+        overflow: auto;
     }
     .right-main-mb{
     display: flex!important;
