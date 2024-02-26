@@ -314,6 +314,7 @@ main{
             padding: 1rem;
             color: white;
             border-radius: 20px;
+            margin: 1rem;
         }
         p{
             background-color: rgba(0, 0, 0, 0.719)!important;
